@@ -1,0 +1,21 @@
+name: EAI
+version: 1.0.0
+main: com.elyther.eai.EAI
+api-version: '1.21'
+
+author: Elyther
+description: Elyther AI NPC
+
+commands:
+
+  eai:
+    description: Elyther AI
+    usage: /eai <message|create|remove|reload>
+    aliases:
+      - ai
+
+permissions:
+
+  eai.admin:
+    description: EAI admin commands
+    default: op
