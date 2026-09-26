@@ -1,0 +1,93 @@
+# ==========================================================
+# EAI - ELYTHER AI
+# ==========================================================
+
+ai:
+
+  # --------------------------------------------------------
+  # Provider sırası
+  #
+  # Birinci limitə düşsə ikinciyə keçir.
+  # İkinci limitə düşsə üçüncüyə keçir.
+  # --------------------------------------------------------
+
+  providers:
+
+    gemini:
+      enabled: true
+      environment-variable: "EAI_GEMINI_KEY"
+      model: "gemini-2.5-flash"
+
+    groq:
+      enabled: true
+      environment-variable: "EAI_GROQ_KEY"
+      model: "openai/gpt-oss-20b"
+
+    openrouter:
+      enabled: true
+      environment-variable: "EAI_OPENROUTER_KEY"
+      model: "openrouter/free"
+
+  # Providerlərin istifadə olunma sırası
+  order:
+    - gemini
+    - groq
+    - openrouter
+
+  # --------------------------------------------------------
+  # AI
+  # --------------------------------------------------------
+
+  system-prompt: |
+    Sən ElytherSMP Minecraft serverinin AI köməkçisisən.
+
+    Oyunçularla Azərbaycan dilində danış.
+    Oyunçu başqa dildə yazarsa həmin dildə cavab ver.
+
+    Cavabları çox uzun etmə.
+    Minecraft haqqında suallara aydın cavab ver.
+
+    ElytherSMP haqqında bilmədiyin məlumatı uydurma.
+    Bilmirsənsə bunu açıq şəkildə bildir.
+
+    Sən oyunçulara kömək edən mehriban Minecraft AI-sən.
+
+  max-tokens: 300
+
+  temperature: 0.7
+
+  cooldown-seconds: 3
+
+
+# ==========================================================
+# NPC
+# ==========================================================
+
+npc:
+
+  enabled: true
+
+  name: "&b&lElyther AI"
+
+  type: VILLAGER
+
+  movement:
+
+    enabled: true
+
+    radius: 8
+
+    interval-seconds: 5
+
+  # Bunlar NPC yaradıldıqdan sonra avtomatik yazılacaq.
+  world: ""
+
+  x: 0
+
+  y: 0
+
+  z: 0
+
+  yaw: 0
+
+  pitch: 0
